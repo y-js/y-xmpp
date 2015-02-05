@@ -159,14 +159,14 @@ class XMPPConnector
   send: (user, json, type = "message")->
     # do not send y-operations if not synced,
     # send sync messages though
-    if @is_synced or json.sync_step? or @is_syncing
-      m = new ltx.Element "message",
-        to: if user is "" then @room else @room + "/" + user
-        type: if type? then type else "chat"
-      message = @encodeMessageToXml(m, json)
-      if @debug
-        console.log "SENDING: "+message.root().toString()
-      @xmpp.send message.root()
+    #if @is_synced or json.sync_step? ## or @is_syncing
+    m = new ltx.Element "message",
+      to: if user is "" then @room else @room + "/" + user
+      type: if type? then type else "chat"
+    message = @encodeMessageToXml(m, json)
+    if @debug
+      console.log "SENDING: "+message.root().toString()
+    @xmpp.send message.root()
 
   broadcast: (json)->
     @send "", json, "groupchat"

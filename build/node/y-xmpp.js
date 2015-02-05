@@ -187,17 +187,15 @@ XMPPConnector = (function() {
     if (type == null) {
       type = "message";
     }
-    if (this.is_synced || (json.sync_step != null) || this.is_syncing) {
-      m = new ltx.Element("message", {
-        to: user === "" ? this.room : this.room + "/" + user,
-        type: type != null ? type : "chat"
-      });
-      message = this.encodeMessageToXml(m, json);
-      if (this.debug) {
-        console.log("SENDING: " + message.root().toString());
-      }
-      return this.xmpp.send(message.root());
+    m = new ltx.Element("message", {
+      to: user === "" ? this.room : this.room + "/" + user,
+      type: type != null ? type : "chat"
+    });
+    message = this.encodeMessageToXml(m, json);
+    if (this.debug) {
+      console.log("SENDING: " + message.root().toString());
     }
+    return this.xmpp.send(message.root());
   };
 
   XMPPConnector.prototype.broadcast = function(json) {
