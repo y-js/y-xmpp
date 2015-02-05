@@ -30,7 +30,7 @@ bower install y-xmpp --save
 ### Create the connection object
 ```
 var options = {};
-var conn = new XMPP(options); // will connect to the default endpoint
+var conn = new Y.XMPP(options); // will connect to the default endpoint
 ```
 
 On the options object you can put the following properties:
@@ -52,8 +52,8 @@ On the options object you can put the following properties:
 ### Join a room, creating the Connector
 ```
 var options = {
-  syncMode: "syncAll" // does also support "master-slave"
-  // , role: "master" // only if this is a master client, and syncMode is "master-slave"
+  syncMethod: "syncAll" // does also support "master-slave"
+  // , role: "master" // only if this is a master client, and syncMethod is "master-slave"
 };
 var connector = conn.join("my-new-roomname", options)
 ```

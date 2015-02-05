@@ -75,13 +75,13 @@ class XMPPHandler
 
   #
   # Join a specific room
-  # @params join(room, syncMode)
+  # @params join(room, syncMethod)
   #   room {String} The room name
   #   options.role {String} "master" or "slave" (defaults to slave)
-  #   options.syncMode {String} The mode in which to sync to the other clients ("syncAll" or "master-slave")
+  #   options.syncMethod {String} The mode in which to sync to the other clients ("syncAll" or "master-slave")
   join: (room, options = {})->
     options.role ?= "slave"
-    options.syncMode ?= "syncAll"
+    options.syncMethod ?= "syncAll"
     if not room?
       throw new Error "you must specify a room!"
     if room.indexOf("@") is -1
@@ -96,7 +96,7 @@ class XMPPHandler
         # <x xmlns='http://jabber.org/protocol/muc'/></presence>
         on_bound_to_y = ()=>
           room_conn.init
-            syncMode: options.syncMode
+            syncMethod: options.syncMethod
             role: options.role
             user_id: @xmpp.jid.resource
           room_conn.room = room # set the room jid

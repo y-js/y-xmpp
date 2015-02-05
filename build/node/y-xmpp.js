@@ -97,8 +97,8 @@ XMPPHandler = (function() {
     if (options.role == null) {
       options.role = "slave";
     }
-    if (options.syncMode == null) {
-      options.syncMode = "syncAll";
+    if (options.syncMethod == null) {
+      options.syncMethod = "syncAll";
     }
     if (room == null) {
       throw new Error("you must specify a room!");
@@ -115,7 +115,7 @@ XMPPHandler = (function() {
           on_bound_to_y = function() {
             var room_subscription;
             room_conn.init({
-              syncMode: options.syncMode,
+              syncMethod: options.syncMethod,
               role: options.role,
               user_id: _this.xmpp.jid.resource
             });

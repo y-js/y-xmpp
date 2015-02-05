@@ -3,11 +3,18 @@ XMPP = require './y-xmpp'
 new Polymer 'y-xmpp',
   xmpp: new XMPP(), # this is a shared property indeed!
   ready: ()->
-    if not @room?
-      throw new Error "You must define a room attribute in the xmpp-connector!!"
-    options = {}
-    if @syncMode?
-      options.syncMode = @syncMode
-    this.connector = @xmpp.join(@room, options)
-    if @debug?
-      this.connector.debug = @debug
+    @is_initialized = false
+    @initialize()
+
+  initialize: ()->
+    if not @is_initialized and @room?
+      @is_initialized = true
+      options = {}
+      if @syncMethod?
+        options.syncMethod = @syncMethod
+      this.connector = @xmpp.join(@room, options)
+      if @debug?
+        this.connector.debug = @debug
+
+  roomChanged: ()->
+    @initialize()
