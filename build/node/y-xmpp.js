@@ -166,7 +166,7 @@ XMPPConnector = (function() {
       if (sender === this.user_id) {
 
       } else if (stanza.getAttribute("type") === "unavailable") {
-        return this.userLeft(sender, sender_role);
+        return this.userLeft(sender);
       } else {
         sender_role = stanza.getChild("role", "http://y.ninja/role").getText();
         return this.userJoined(sender, sender_role);

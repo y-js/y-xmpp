@@ -63,5 +63,8 @@ If you do not want to connect to the default room component (see options.default
 var connector = conn.join("room@muc.yatta.ninja")
 ```
 
+## License
+Yjs is licensed under the [MIT License](./LICENSE.txt).
 
+<kevin.jahns@rwth-aachen.de>
 

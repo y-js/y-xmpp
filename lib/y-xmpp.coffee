@@ -140,7 +140,7 @@ class XMPPConnector
         # nop
       else if stanza.getAttribute("type") is "unavailable"
         # a user left the room
-        @userLeft sender, sender_role
+        @userLeft sender
       else
         sender_role = stanza
           .getChild("role","http://y.ninja/role")
