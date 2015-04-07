@@ -1,4 +1,4 @@
-This is an XMPP Connector for Yjs. It works on nodejs and in the browser.
+# XMPP Connector for [Yjs](https://github.com/y-js/yjs)
 
 XMPP is a very nice choice as a Connector, because it provides already a lot of functionality.
 
@@ -6,6 +6,7 @@ XMPP is a very nice choice as a Connector, because it provides already a lot of 
 * Sophisticated Rights Management
 * Very reliable
 * Federated
+* Works with nodejs and in the browser
 
 In production, you may want to implement a master instance (in Node.js), that holds the state of your shared data types, even when all users are disconnected. You can find such a server implementation [here](https://github.com/DadaMonad/meme-together/blob/master/server.js). Note: Yjs itself does not depend on a server instance. The server implementation is just another client in the XMPP chat room. Also: Having (a) master client(s) in the chatroom, can reduce traffic significantly.
 
