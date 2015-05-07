@@ -80,10 +80,10 @@ XMPPHandler = (function() {
   };
 
   XMPPHandler.prototype.setIsOnline = function() {
-    var f, _i, _len, _ref;
-    _ref = this.when_online_listeners;
-    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-      f = _ref[_i];
+    var f, i, len, ref;
+    ref = this.when_online_listeners;
+    for (i = 0, len = ref.length; i < len; i++) {
+      f = ref[i];
       f();
     }
     return this.is_online = true;
