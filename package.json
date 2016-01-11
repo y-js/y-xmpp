@@ -1,8 +1,8 @@
 {
   "name": "y-xmpp",
-  "version": "0.6.0",
+  "version": "0.7.1",
   "description": "XMPP Connector for Yjs",
-  "main": "src/y-xmpp.js",
+  "main": "src/Xmpp.js",
   "scripts": {
     "test": "node --harmony ./node_modules/.bin/gulp test",
     "lint": "./node_modules/.bin/standard",
