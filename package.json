@@ -1,6 +1,6 @@
 {
   "name": "y-xmpp",
-  "version": "7.0.0",
+  "version": "7.0.1",
   "description": "XMPP Connector for Yjs",
   "main": "./src/Xmpp.js",
   "scripts": {
@@ -42,7 +42,7 @@
     "ltx": "^0.8.0",
     "node-xmpp-client": "^2.0.0"
   },
-"devDependencies": {
+  "devDependencies": {
     "babel-eslint": "^4.1.4",
     "fs": "0.0.2",
     "gulp": "^3.9.0",
