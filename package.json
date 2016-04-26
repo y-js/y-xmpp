@@ -1,6 +1,6 @@
 {
   "name": "y-xmpp",
-  "version": "7.0.2",
+  "version": "7.0.3",
   "description": "XMPP Connector for Yjs",
   "main": "./src/Xmpp.js",
   "scripts": {
@@ -55,6 +55,6 @@
     "standard": "^5.3.1"
   },
   "peerDependencies": {
-    "yjs": "^9.0.0 || ^10.0.0"
+    "yjs": "^9.0.0 || ^10.0.0 || ^11.0.0"
   }
 }
