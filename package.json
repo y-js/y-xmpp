@@ -1,6 +1,6 @@
 {
   "name": "y-xmpp",
-  "version": "7.0.3",
+  "version": "7.0.4",
   "description": "XMPP Connector for Yjs",
   "main": "./src/Xmpp.js",
   "scripts": {
